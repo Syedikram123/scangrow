@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ScanGrow | Smart Visiting Cards</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+font-family:'Inter',sans-serif;
+background:#f8fafc;
+color:#1e293b;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+/* HEADER */
+header{
+background:white;
+box-shadow:0 4px 10px rgba(0,0,0,0.05);
+padding:15px 0;
+}
+.nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+.logo{
+font-size:22px;
+font-weight:700;
+}
+.btn{
+padding:12px 22px;
+background:#2563eb;
+color:white;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+}
+
+/* HERO */
+.hero{
+padding:80px 0;
+text-align:center;
+}
+.hero h1{
+font-size:42px;
+margin-bottom:10px;
+}
+.hero p{
+color:#475569;
+max-width:650px;
+margin:auto;
+margin-bottom:25px;
+}
+.hero-buttons{
+display:flex;
+gap:10px;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+/* SECTION */
+.section{
+padding:70px 0;
+}
+.section h2{
+text-align:center;
+margin-bottom:40px;
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+.card{
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
+}
+
+/* COMPARE */
+.compare{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+.compare div{
+background:white;
+padding:20px;
+border-radius:10px;
+}
+
+/* PRICING */
+.pricing{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+.price-card{
+background:white;
+padding:25px;
+border-radius:12px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,0.06);
+}
+.price-card img{
+width:100%;
+border-radius:10px;
+margin-bottom:10px;
+}
+.price{
+font-size:28px;
+font-weight:700;
+margin:10px 0;
+}
+.price-card ul{
+list-style:none;
+margin:15px 0;
+}
+.price-card li{
+margin:6px 0;
+color:#475569;
+}
+
+/* FORM */
+form{
+max-width:400px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+input, textarea{
+padding:12px;
+border-radius:8px;
+border:1px solid #ddd;
+}
+
+/* FOOTER */
+footer{
+background:#0f172a;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:50px;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+.hero h1{font-size:28px;}
+.compare{grid-template-columns:1fr;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container nav">
+<div class="logo">ScanGrow</div>
+<a class="btn" href="#pricing">Get Started</a>
+</div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+<div class="container">
+
+<h1>Scan the Code – Grow the Business</h1>
+
+<p>
+Turn your visiting card into a smart digital experience.
+Let customers call, WhatsApp, locate and connect with your business instantly.
+</p>
+
+<div class="hero-buttons">
+<a class="btn" href="https://card.scangrow.in/demo">See Demo</a>
+<a class="btn" href="https://wa.me/916364369405?text=Want Smart Visiting Cards">Order Now</a>
+</div>
+
+</div>
+</section>
+
+<!-- FEATURES -->
+<section class="section">
+<div class="container">
+<h2>What You Get</h2>
+
+<div class="grid">
+<div class="card">📞 One Tap Call</div>
+<div class="card">💬 WhatsApp Chat</div>
+<div class="card">📍 Location Access</div>
+<div class="card">📸 Social Media Links</div>
+<div class="card">⭐ Google Reviews</div>
+<div class="card">🔗 Easy Share</div>
+</div>
+
+</div>
+</section>
+
+<!-- COMPARE -->
+<section class="section">
+<div class="container">
+<h2>Why Smart Card?</h2>
+
+<div class="compare">
+
+<div>
+<b>Normal Card ❌</b><br><br>
+Gets lost<br>
+No interaction<br>
+Static info<br>
+No growth
+</div>
+
+<div>
+<b>Smart Card ✅</b><br><br>
+Always accessible<br>
+Instant contact<br>
+Modern experience<br>
+Helps grow business
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- WHO -->
+<section class="section">
+<div class="container">
+<h2>Who Is This For?</h2>
+<p style="text-align:center;color:#475569;">
+Shops • Salons • Cafes • Freelancers • Agents • Small Businesses
+</p>
+</div>
+</section>
+
+<!-- PRICING -->
+<section class="section" id="pricing">
+<div class="container">
+<h2>Pricing</h2>
+
+<div class="pricing">
+
+<div class="price-card">
+<img src="basic.jpg">
+<h3>Basic</h3>
+<div class="price">₹1499</div>
+<ul>
+<li>1000 Cards</li>
+<li>180 GSM</li>
+<li>1 Side Print</li>
+<li>Glossy / Matte</li>
+<li>Smart Digital Card</li>
+</ul>
+<a class="btn" href="https://wa.me/916364369405?text=Basic Plan">Order</a>
+</div>
+
+<div class="price-card">
+<img src="business.jpg">
+<h3>Business</h3>
+<div class="price">₹2499</div>
+<ul>
+<li>1000 Cards</li>
+<li>300 GSM</li>
+<li>2 Side Print</li>
+<li>Matte + Gloss</li>
+<li>Smart Digital Card</li>
+</ul>
+<a class="btn" href="https://wa.me/916364369405?text=Business Plan">Order</a>
+</div>
+
+<div class="price-card">
+<img src="premium.jpg">
+<h3>Premium</h3>
+<div class="price">₹3499</div>
+<ul>
+<li>1000 Cards</li>
+<li>300 GSM</li>
+<li>2 Side Print</li>
+<li>Matte + UV Gloss</li>
+<li>Smart Digital Card</li>
+</ul>
+<a class="btn" href="https://wa.me/916364369405?text=Premium Plan">Order</a>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- HOW -->
+<section class="section">
+<div class="container">
+<h2>How It Works</h2>
+
+<div class="grid">
+<div class="card">Send details on WhatsApp</div>
+<div class="card">We create your smart card</div>
+<div class="card">We deliver to your doorstep</div>
+</div>
+
+</div>
+</section>
+
+<!-- TRUST -->
+<section class="section">
+<div class="container" style="text-align:center;">
+<h2>Trusted by 100+ Businesses</h2>
+<p style="color:#475569;">
+⭐ "Very modern and useful"<br>
+⭐ "Customers contact easily now"<br>
+⭐ "Best upgrade from normal cards"
+</p>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section class="section">
+<div class="container" style="text-align:center;">
+
+<h2>Order Now</h2>
+
+<a class="btn" href="https://wa.me/916364369405?text=Want Smart Visiting Cards">
+WhatsApp Now
+</a>
+
+<br><br>
+
+<form onsubmit="sendForm(event)">
+<input id="name" placeholder="Name" required>
+<input id="address" placeholder="Address" required>
+<textarea id="need" placeholder="Requirement"></textarea>
+<button class="btn">Submit</button>
+</form>
+
+</div>
+</section>
+
+<footer>
+Serving Hyderabad & Bidar<br>
+Instagram: scangrow.in<br><br>
+Made with ❤️ by ScanGrow
+</footer>
+
+<script>
+function sendForm(e){
+e.preventDefault();
+let name=document.getElementById("name").value;
+let address=document.getElementById("address").value;
+let need=document.getElementById("need").value;
+
+let msg = `Name: ${name}%0AAddress: ${address}%0ANeed: ${need}`;
+
+window.location.href="https://wa.me/916364369405?text="+msg;
+}
+</script>
+
+</body>
+</html>
