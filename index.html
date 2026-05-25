@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kids Trends</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://unpkg.com/html5-qrcode"></script>
+</head>
+<body>
+
+  <div class="app">
+
+    <header class="topbar">
+      <div>
+        <h1 id="shopName">Kids Trends</h1>
+        <p id="dateTime"></p>
+      </div>
+
+      <a href="dashboard.html" class="dashboard-btn">
+        Dashboard
+      </a>
+    </header>
+     
+    <section class="manual-add-card">
+
+  <input 
+    type="text" 
+    id="manualCode"
+    placeholder="Enter Product Code (Example: 101)"
+  >
+
+  <button onclick="manualAddProduct()" class="manual-add-btn">
+    Add
+  </button>
+
+</section>
+
+    <section class="bill-card">
+
+      <div class="bill-header">
+        <h2>New Bill</h2>
+        <span id="billNumber"></span>
+      </div>
+
+      <div id="billItems" class="bill-items">
+
+        <div class="empty-state">
+          <h3>No Products Added</h3>
+          <p>Scan QR Code to add products</p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="summary-card">
+
+      <div class="summary-row">
+        <span>Subtotal</span>
+        <span id="subtotal">₹0</span>
+      </div>
+
+      <div class="summary-row">
+        <span>Tax</span>
+        <span id="tax">₹0</span>
+      </div>
+
+      <div class="summary-row total">
+        <span>Total</span>
+        <span id="grandTotal">₹0</span>
+      </div>
+
+      <div class="summary-buttons">
+        <button onclick="printBill()" class="print-btn">
+          Print Bill
+        </button>
+
+        <button onclick="clearBill()" class="clear-btn">
+          Clear
+        </button>
+      </div>
+
+    </section>
+
+    <button class="scanner-fab" onclick="openScanner()">
+      <svg width="34" height="34" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+  <path d="M4 7V5a1 1 0 0 1 1-1h2"/>
+  <path d="M20 7V5a1 1 0 0 0-1-1h-2"/>
+  <path d="M4 17v2a1 1 0 0 0 1 1h2"/>
+  <path d="M20 17v2a1 1 0 0 1-1 1h-2"/>
+  <line x1="7" y1="12" x2="17" y2="12"/>
+</svg>
+    </button>
+
+  </div>
+
+  <!-- Scanner Modal -->
+
+  <div id="scannerModal" class="scanner-modal">
+
+    <div class="scanner-content">
+
+      <div class="scanner-top">
+        <h2>Scan Product</h2>
+
+        <button onclick="closeScanner()" class="close-btn">
+          ✕
+        </button>
+      </div>
+
+      <div id="reader"></div>
+
+    </div>
+
+  </div>
+
+  <!-- PRINT AREA -->
+
+  <div id="printArea">
+
+    <div class="receipt">
+
+      <div class="receipt-center">
+        <h2 id="receiptShopName">NOOR E ARSH</h2>
+        <p id="receiptAddress">Habshiguda, Hyderabad</p>
+        <p id="receiptPhone">9876543210</p>
+      </div>
+
+      <hr>
+
+      <div id="receiptItems"></div>
+
+      <hr>
+
+      <div class="receipt-total">
+        <strong>TOTAL</strong>
+        <strong id="receiptTotal">₹0</strong>
+      </div>
+
+      <hr>
+
+      <div class="receipt-center">
+        <p id="receiptFooter">Thank You Visit Again</p>
+        <p id="receiptInstagram">@shopname</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+
+</body>
+</html>

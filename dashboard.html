@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Dashboard</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="dashboard-page">
+
+  <header class="topbar">
+    <div>
+      <h1>NOOR E ARSH POS</h1>
+      <p>Product Dashboard</p>
+    </div>
+
+    <a href="index.html" class="dashboard-btn">
+      Billing
+    </a>
+  </header>
+
+  <!-- SHOP SETTINGS -->
+
+  <section class="dashboard-card">
+
+    <h2>Shop Settings</h2>
+
+    <input type="text" id="shop_name" placeholder="Shop Name">
+    <input type="text" id="shop_address" placeholder="Address">
+    <input type="text" id="shop_phone" placeholder="Phone">
+    <input type="text" id="shop_footer" placeholder="Footer Message">
+    <input type="text" id="shop_instagram" placeholder="Instagram">
+
+    <button onclick="saveSettings()" class="primary-btn">
+      Save Settings
+    </button>
+
+  </section>
+
+  <!-- PRODUCT MANAGEMENT -->
+
+  <section class="dashboard-card">
+
+    <h2>Add Product</h2>
+
+    <input type="text" id="product_id" placeholder="Product ID">
+    <input type="text" id="product_name" placeholder="Product Name">
+    <input type="number" id="product_price" placeholder="Product Price">
+
+    <button onclick="addProduct()" class="primary-btn">
+      Add Product
+    </button>
+
+  </section>
+
+  <!-- SEARCH -->
+
+  <section class="dashboard-card">
+    <input type="text" id="searchInput" placeholder="Search Product..." onkeyup="renderProducts()">
+  </section>
+
+  <!-- PRODUCT TABLE -->
+
+  <section class="dashboard-card">
+
+    <h2>Products</h2>
+
+    <table>
+
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+
+      <tbody id="productTable"></tbody>
+
+    </table>
+
+  </section>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>

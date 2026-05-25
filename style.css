@@ -1,0 +1,379 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial;
+}
+
+:root{
+  --bg:#0f172a;
+  --card:#1e293b;
+  --white:#fff;
+  --primary:#7c3aed;
+  --danger:#ef4444;
+  --success:#10b981;
+}
+
+body{
+  background:var(--bg);
+  color:var(--white);
+  min-height:100vh;
+}
+
+.app,
+.dashboard-page{
+  padding:20px;
+  padding-bottom:120px;
+}
+
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+}
+
+.topbar h1{
+  font-size:24px;
+}
+
+.topbar p{
+  color:#94a3b8;
+  margin-top:5px;
+}
+
+.dashboard-btn{
+  background:var(--primary);
+  color:white;
+  text-decoration:none;
+  padding:10px 16px;
+  border-radius:12px;
+}
+
+.bill-card,
+.summary-card,
+.dashboard-card{
+  background:var(--card);
+  padding:20px;
+  border-radius:20px;
+  margin-bottom:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+.bill-header{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:20px;
+}
+
+.bill-item{
+  background:#0f172a;
+  padding:15px;
+  border-radius:14px;
+  margin-bottom:15px;
+}
+
+.bill-row{
+  display:flex;
+  justify-content:space-between;
+  margin-top:10px;
+}
+
+.summary-row{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:15px;
+}
+
+.total{
+  font-size:22px;
+  font-weight:bold;
+}
+
+.summary-buttons{
+  display:flex;
+  gap:10px;
+  margin-top:20px;
+}
+
+button{
+  border:none;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+button:hover{
+  transform:scale(1.03);
+}
+
+.print-btn,
+.primary-btn{
+  background:var(--primary);
+  color:white;
+  flex:1;
+  padding:14px;
+  border-radius:14px;
+}
+
+.clear-btn{
+  background:var(--danger);
+  color:white;
+  flex:1;
+  padding:14px;
+  border-radius:14px;
+}
+
+.scanner-fab{
+  position:fixed;
+  bottom:25px;
+  left:50%;
+  transform:translateX(-50%);
+  width:80px;
+  height:80px;
+  border-radius:28px;
+  border:none;
+
+  background:
+  linear-gradient(
+    135deg,
+    #7c3aed,
+    #9333ea,
+    #6366f1
+  );
+
+  color:white;
+  font-size:34px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  box-shadow:
+  0 15px 35px rgba(124,58,237,0.45),
+  inset 0 2px 10px rgba(255,255,255,0.2);
+
+  z-index:999;
+
+  animation:floatingScanner 2.5s infinite ease-in-out;
+}
+
+@keyframes floatingScanner{
+
+  0%{
+    transform:translateX(-50%) translateY(0px);
+  }
+
+  50%{
+    transform:translateX(-50%) translateY(-6px);
+  }
+
+  100%{
+    transform:translateX(-50%) translateY(0px);
+  }
+
+}
+
+.scanner-modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.8);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:999;
+}
+
+.scanner-content{
+  background:var(--card);
+  width:90%;
+  padding:20px;
+  border-radius:20px;
+}
+
+.scanner-top{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:20px;
+}
+
+.close-btn{
+  background:red;
+  color:white;
+  width:35px;
+  height:35px;
+  border-radius:50%;
+}
+
+input{
+  width:100%;
+  padding:14px;
+  border:none;
+  outline:none;
+  border-radius:12px;
+  margin-bottom:15px;
+  background:#0f172a;
+  color:white;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+th,td{
+  padding:12px;
+  text-align:left;
+}
+
+tr{
+  border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+.delete-btn{
+  background:var(--danger);
+  color:white;
+  padding:8px 12px;
+  border-radius:10px;
+}
+
+.empty-state{
+  text-align:center;
+  padding:40px 0;
+  color:#94a3b8;
+}
+
+#printArea{
+  display:none;
+}
+
+.receipt{
+  width:320px;
+  margin:auto;
+  background:white;
+  color:black;
+  padding:20px;
+
+  font-family:monospace;
+}
+
+.receipt h2{
+  font-size:24px;
+}
+
+.receipt hr{
+  border:none;
+  border-top:1px dashed black;
+  margin:15px 0;
+}
+
+.receipt-item{
+  display:flex;
+  justify-content:space-between;
+  margin:10px 0;
+}
+
+.receipt-total{
+  display:flex;
+  justify-content:space-between;
+  font-size:20px;
+  margin-top:20px;
+}
+
+.receipt-footer{
+  text-align:center;
+  margin-top:20px;
+  font-size:14px;
+}
+
+@media print{
+
+  body *{
+    visibility:hidden;
+  }
+
+  #printArea,
+  #printArea *{
+    visibility:visible;
+  }
+
+  #printArea{
+    display:block;
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+  }
+
+}
+.bill-table{
+  width:100%;
+}
+
+.bill-table-header{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr 50px;
+  padding-bottom:15px;
+  margin-bottom:15px;
+  border-bottom:1px solid rgba(255,255,255,0.1);
+  color:#94a3b8;
+  font-size:14px;
+}
+
+.bill-row-item{
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr 50px;
+  align-items:center;
+  gap:10px;
+
+  padding:14px 0;
+
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.product-name{
+  font-weight:600;
+}
+
+.product-price{
+  font-weight:bold;
+}
+
+.qty-controls{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.qty-controls button{
+  width:28px;
+  height:28px;
+  border:none;
+  border-radius:10px;
+  background:#334155;
+  color:white;
+  font-size:18px;
+}
+
+.delete-icon{
+  background:transparent;
+  border:none;
+  color:#ef4444;
+  font-size:18px;
+}
+.manual-add-card{
+  background:var(--card);
+  padding:15px;
+  border-radius:20px;
+  margin-bottom:20px;
+
+  display:flex;
+  gap:10px;
+}
+
+.manual-add-btn{
+  background:var(--primary);
+  color:white;
+  border:none;
+  border-radius:14px;
+  padding:0 20px;
+}
