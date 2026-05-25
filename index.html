@@ -1,157 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kids Trends</title>
-
-  <link rel="stylesheet" href="style.css">
-
-  <script src="https://unpkg.com/html5-qrcode"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>NOOR E ARSH — Premium POS Terminal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="app">
+    <div class="app-container">
+        
+        <main id="page-dashboard" class="app-page active">
+            <header class="premium-header">
+                <div class="brand-block">
+                    <span class="brand-logo">N</span>
+                    <div class="brand-text">
+                        <h1 class="shop-name-display">NOOR E ARSH</h1>
+                        <p class="brand-sub">ENTERPRISE MANAGEMENT CONTROL</p>
+                    </div>
+                </div>
+            </header>
 
-    <header class="topbar">
-      <div>
-        <h1 id="shopName">Kids Trends</h1>
-        <p id="dateTime"></p>
-      </div>
+            <div class="scroll-container">
+                <section class="premium-card">
+                    <div class="card-header">
+                        <h2>SYSTEM CONFIGURATION</h2>
+                        <span class="status-badge">LOCAL STORAGE ACTIVE</span>
+                    </div>
+                    <form id="settings-form" class="grid-form">
+                        <div class="input-group">
+                            <label>Store Banner Identity</label>
+                            <input type="text" id="cfg-shop-name" placeholder="NOOR E ARSH">
+                        </div>
+                        <div class="input-group">
+                            <label>Geographic Address</label>
+                            <input type="text" id="cfg-address" placeholder="Habshiguda, Hyderabad">
+                        </div>
+                        <div class="input-group">
+                            <label>Contact Channel</label>
+                            <input type="tel" id="cfg-phone" placeholder="9876543210">
+                        </div>
+                        <div class="input-group">
+                            <label>Instagram Handle</label>
+                            <input type="text" id="cfg-instagram" placeholder="@noorearsh.pos">
+                        </div>
+                        <div class="input-group full-width">
+                            <label>Terminal Footer Greeting Phrase</label>
+                            <input type="text" id="cfg-footer-msg" placeholder="Thank You. Visit Again.">
+                        </div>
+                    </form>
+                </section>
 
-      <a href="dashboard.html" class="dashboard-btn">
-        Dashboard
-      </a>
-    </header>
-     
-    <section class="manual-add-card">
+                <section class="premium-card">
+                    <div class="card-header">
+                        <h2>CATALOG PROVISIONING</h2>
+                    </div>
+                    <form id="product-form" class="grid-form">
+                        <div class="input-group">
+                            <label>SKU / Product ID</label>
+                            <input type="text" id="prod-id" required placeholder="e.g., 101">
+                        </div>
+                        <div class="input-group">
+                            <label>Product Nomenclature</label>
+                            <input type="text" id="prod-name" required placeholder="e.g., Silk Kurta">
+                        </div>
+                        <div class="input-group">
+                            <label>Unit Valuation (₹)</label>
+                            <input type="number" id="prod-price" step="0.01" required placeholder="0.00">
+                        </div>
+                        <button type="submit" class="btn btn-primary full-width ripple">
+                            <span>PROVISION ITEM</span>
+                        </button>
+                    </form>
+                </section>
 
-  <input 
-    type="text" 
-    id="manualCode"
-    placeholder="Enter Product Code (Example: 101)"
-  >
+                <section class="premium-card mechanical-margin">
+                    <div class="card-header border-bottom">
+                        <h2>INVENTORY ARCHIVE</h2>
+                        <div class="search-wrapper">
+                            <input type="text" id="search-inventory" placeholder="Filter inventory registry...">
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="premium-table" id="inventory-table">
+                            <thead>
+                                <tr>
+                                    <th>SKU ID</th>
+                                    <th>NOMENCLATURE</th>
+                                    <th>VALUATION</th>
+                                    <th style="text-align: right;">ACTION</th>
+                                </tr>
+                            </thead>
+                            <tbody id="inventory-tbody">
+                                </tbody>
+                        </table>
+                        <div class="empty-state-container hidden" id="inventory-empty">
+                            <p>No products found in the catalog database.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
 
-  <button onclick="manualAddProduct()" class="manual-add-btn">
-    Add
-  </button>
+        <main id="page-billing" class="app-page">
+            <header class="premium-header">
+                <div class="billing-meta-row">
+                    <div class="meta-left">
+                        <span class="pill-badge">TERMINAL LIVE</span>
+                        <h1 class="terminal-heading">BILLING POINT</h1>
+                    </div>
+                    <div class="meta-right">
+                        <div class="invoice-number" id="bill-number-display">INV-1001</div>
+                        <div class="live-clock" id="live-clock-display">00:00:00</div>
+                    </div>
+                </div>
+            </header>
 
-</section>
+            <div class="scroll-container dynamic-billing-pad">
+                <section class="premium-card matrix-card">
+                    <div class="table-responsive">
+                        <table class="premium-table" id="billing-table">
+                            <thead>
+                                <tr>
+                                    <th>PRODUCT DESCRIPTION</th>
+                                    <th style="text-align: center; width: 80px;">QTY</th>
+                                    <th style="text-align: right;">UNIT Price</th>
+                                    <th style="text-align: right;">AGGR Price</th>
+                                </tr>
+                            </thead>
+                            <tbody id="billing-tbody">
+                                </tbody>
+                        </table>
+                        <div class="empty-state-container" id="billing-empty">
+                            <div class="empty-icon">⚡</div>
+                            <h3>Invoice Ledger Void</h3>
+                            <p>Tap the core scanner array hub or input a manual override to register transaction lines.</p>
+                            <div class="manual-override-box">
+                                <input type="text" id="manual-sku-input" placeholder="Enter SKU ID">
+                                <button id="btn-manual-add" class="btn btn-secondary">ADD SKU</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
 
-    <section class="bill-card">
+            <section class="sticky-financial-footer">
+                <div class="financial-breakdown">
+                    <div class="fin-row">
+                        <span class="label">SUBTOTAL AGREEMENT</span>
+                        <span class="value" id="fin-subtotal">₹0.00</span>
+                    </div>
+                    <div class="fin-row">
+                        <span class="label">INTEGRATED GST APPLIED (18%)</span>
+                        <span class="value" id="fin-tax">₹0.00</span>
+                    </div>
+                    <div class="fin-row total-row">
+                        <span class="label">GRAND SETTLEMENT TOTAL</span>
+                        <span class="value" id="fin-total">₹0.00</span>
+                    </div>
+                </div>
+                <div class="action-grid">
+                    <button id="btn-clear-bill" class="btn btn-secondary ripple">VOID ORDER</button>
+                    <button id="btn-print-bill" class="btn btn-primary ripple">DISPATCH INVOICE</button>
+                </div>
+            </section>
+        </main>
 
-      <div class="bill-header">
-        <h2>New Bill</h2>
-        <span id="billNumber"></span>
-      </div>
-
-      <div id="billItems" class="bill-items">
-
-        <div class="empty-state">
-          <h3>No Products Added</h3>
-          <p>Scan QR Code to add products</p>
+        <div class="scanner-fab-anchor">
+            <button id="trigger-scan-modal" class="scanner-fab-button" aria-label="Initialize Core Scanning Matrix Array">
+                <div class="fab-pulse-ring"></div>
+                <div class="fab-glass-body">
+                    <svg class="scan-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 7V5a2 2 0 0 1 2-2h2m10 0h2a2 2 0 0 1 2 2v2m0 10v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2" />
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                    </svg>
+                </div>
+            </button>
         </div>
 
-      </div>
-
-    </section>
-
-    <section class="summary-card">
-
-      <div class="summary-row">
-        <span>Subtotal</span>
-        <span id="subtotal">₹0</span>
-      </div>
-
-      <div class="summary-row">
-        <span>Tax</span>
-        <span id="tax">₹0</span>
-      </div>
-
-      <div class="summary-row total">
-        <span>Total</span>
-        <span id="grandTotal">₹0</span>
-      </div>
-
-      <div class="summary-buttons">
-        <button onclick="printBill()" class="print-btn">
-          Print Bill
-        </button>
-
-        <button onclick="clearBill()" class="clear-btn">
-          Clear
-        </button>
-      </div>
-
-    </section>
-
-    <button class="scanner-fab" onclick="openScanner()">
-      <svg width="34" height="34" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-  <path d="M4 7V5a1 1 0 0 1 1-1h2"/>
-  <path d="M20 7V5a1 1 0 0 0-1-1h-2"/>
-  <path d="M4 17v2a1 1 0 0 0 1 1h2"/>
-  <path d="M20 17v2a1 1 0 0 1-1 1h-2"/>
-  <line x1="7" y1="12" x2="17" y2="12"/>
-</svg>
-    </button>
-
-  </div>
-
-  <!-- Scanner Modal -->
-
-  <div id="scannerModal" class="scanner-modal">
-
-    <div class="scanner-content">
-
-      <div class="scanner-top">
-        <h2>Scan Product</h2>
-
-        <button onclick="closeScanner()" class="close-btn">
-          ✕
-        </button>
-      </div>
-
-      <div id="reader"></div>
-
+        <nav class="system-bottom-nav">
+            <button id="nav-to-dashboard" class="nav-item active">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="9" /><rect x="14" y="3" width="7" height="5" />
+                    <rect x="14" y="12" width="7" height="9" /><rect x="3" y="16" width="7" height="5" />
+                </svg>
+                <span>ARCHIVE</span>
+            </button>
+            <div class="nav-item-spacer"></div> <button id="nav-to-billing" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="1" x2="12" y2="23" />
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                </svg>
+                <span>TERMINAL</span>
+            </button>
+        </nav>
     </div>
 
-  </div>
-
-  <!-- PRINT AREA -->
-
-  <div id="printArea">
-
-    <div class="receipt">
-
-      <div class="receipt-center">
-        <h2 id="receiptShopName">NOOR E ARSH</h2>
-        <p id="receiptAddress">Habshiguda, Hyderabad</p>
-        <p id="receiptPhone">9876543210</p>
-      </div>
-
-      <hr>
-
-      <div id="receiptItems"></div>
-
-      <hr>
-
-      <div class="receipt-total">
-        <strong>TOTAL</strong>
-        <strong id="receiptTotal">₹0</strong>
-      </div>
-
-      <hr>
-
-      <div class="receipt-center">
-        <p id="receiptFooter">Thank You Visit Again</p>
-        <p id="receiptInstagram">@shopname</p>
-      </div>
-
+    <div id="scanner-modal" class="modal-overlay">
+        <div class="modal-window">
+            <div class="modal-top-bar">
+                <h3>OPTICAL SCAN LEDGER MATRIX</h3>
+                <button id="close-scanner-modal" class="modal-close-btn">&times;</button>
+            </div>
+            <div class="scanner-optical-viewport">
+                <div id="scanner-hardware-stream"></div>
+                <div class="optical-reticle-crosshair"></div>
+                <div class="scanner-laser-line"></div>
+            </div>
+            <div class="scanner-status-tray">
+                <span id="scanner-feedback-msg">ALIGN HARDWARE QR WITH RETICLE TARGET</span>
+            </div>
+        </div>
     </div>
 
-  </div>
+    <div id="thermal-print-window-receipt" class="thermal-receipt-element-container">
+        </div>
 
-  <script src="app.js"></script>
-
+    <script src="app.js"></script>
 </body>
 </html>
