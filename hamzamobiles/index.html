@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ScanGrow | Hamza Mobiles</title>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F76BPDDP36"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-F76BPDDP36');
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+<style>
+body{
+  margin:0;
+  font-family:Poppins;
+  background:#f5f6fa;
+}
+
+/* HEADER */
+.header{
+  background:linear-gradient(135deg,#042d37,#0a5c6d);
+  color:#fff;
+  padding:30px 20px 70px;
+  text-align:center;
+  border-bottom-left-radius:25px;
+  border-bottom-right-radius:25px;
+}
+
+.logo{
+  width:90px;
+  height:90px;
+  border-radius:20px;
+  background:#fff;
+  margin:auto;
+  overflow:hidden;
+}
+
+.logo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.title{
+  font-size:25px;
+  margin-top:12px;
+  font-weight:600;
+}
+
+.subtitle{
+  font-size:15px;
+  opacity:.8;
+}
+
+/* MAIN CARD */
+.card{
+  background:#fff;
+  margin:-45px 15px 20px;
+  border-radius:20px;
+  padding:20px;
+  box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+/* BUTTON GRID */
+.actions{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(110px,1fr));
+  gap:10px;
+  margin-bottom:20px;
+}
+
+.action-btn{
+  background:#f1f2f6;
+  padding:12px;
+  border-radius:14px;
+  font-size:13px;
+  text-align:center;
+  text-decoration:none;
+  color:#333;
+  font-weight:600;
+  transition:.2s;
+}
+
+.action-btn:hover{
+  background:#042d37;
+  color:#fff;
+}
+
+/* GOOGLE REVIEW */
+.review{
+  margin:15px 0;
+}
+
+.review a{
+  display:block;
+  text-align:center;
+  background:#fff3cd;
+  padding:12px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:600;
+  color:#856404;
+}
+
+/* BIG BUTTONS */
+.big-buttons{
+  display:flex;
+  gap:10px;
+  margin-top:15px;
+}
+
+.big-btn{
+  flex:1;
+  padding:14px;
+  border-radius:14px;
+  border:none;
+  font-weight:600;
+  font-size:14px;
+  cursor:pointer;
+}
+
+.about-btn{
+  background:#042d37;
+  color:#fff;
+}
+
+.share-btn{
+  background:#eaeaea;
+}
+
+/* ABOUT */
+#about{
+  display:none;
+  margin-top:15px;
+  font-size:14px;
+  line-height:1.6;
+}
+
+/* RESPONSIVE */
+@media (min-width:768px){
+  .card{
+    max-width:500px;
+    margin:-60px auto 30px;
+  }
+}
+
+.action-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  padding: 10px;
+}
+
+.action-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 80px;
+  border-radius: 14px;
+
+  background: #f3f4f6;
+  color: #111;
+
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+
+  transition: all 0.25s ease;
+}
+
+/* ICON */
+.action-card i {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+/* TEXT */
+.action-card span {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* HOVER */
+.action-card:hover {
+  transform: translateY(-3px);
+  background: #042d37;
+  color: white;
+}
+
+/* PRIMARY (CALL BUTTON SPECIAL) */
+.action-card.primary {
+  background: #111;
+  color: white;
+}
+
+/* DEFAULT ICON */
+.action-card i {
+  font-size: 22px;
+  margin-bottom: 6px;
+  color: #111;
+}
+
+/* BRAND COLORS */
+.action-card.whatsapp i {
+  color: #22c55e;
+}
+
+.action-card.instagram i {
+  color: #E1306C;
+}
+
+.action-card.youtube i {
+  color: #FF0000;
+}
+
+.action-card.location i {
+  color: #3b82f6;
+}
+
+.action-card.call i {
+  color: #22c55e;
+}
+
+.action-card.envelope i {
+  color: #D44638;
+}
+
+.action-card.save-contact i {
+  color: #3b82f6;
+}
+
+.action-card.snapchat i {
+  background: #FFFC00;
+    color: #000;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <div class="logo">
+    <img src="../assets/andriod.png" alt="logo">
+  </div>
+  <div class="title">Hamza Mobiles</div>
+  <div class="subtitle">All kinds of mobile phones, accessories, and repair services available at the best prices.</div>
+</div>
+
+<div class="card">
+
+  <!-- ACTION BUTTONS -->
+  <div class="actions">
+
+   <div class="action-grid">
+
+  <a href="tel:+919481948165" class="action-card call" target="_blank">
+    <i class="fa-solid fa-phone"></i>
+    <span>Call</span>
+  </a>
+  
+  <a href="https://wa.me/919481948165" class="action-card whatsapp" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span>WhatsApp</span>
+  </a>
+
+<a href="https://share.google/WGTxN1u9wPOO19cQw" class="action-card location" target="_blank">
+    <i class="fa-solid fa-location-dot"></i>
+    <span>Location</span>
+  </a>
+  
+  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Hamzamobiles03@gmail.com" class="action-card envelope" target="_blank">
+    <i class="fa-solid fa-envelope"></i>
+    <span>Gmail</span>
+  </a>
+  
+</div>
+  
+  </div>
+
+  <!-- GOOGLE REVIEW -->
+  <div class="review">
+    <a href="https://www.google.com/search?sca_esv=8712aa7b0522de6e&rlz=1C1CHBD_enIN955IN955&sxsrf=APpeQnuabjatQTw4iCpE84wx9Q755RzWeQ:1781868662894&si=APenkKm7iecQ4G6P-TsbSMFKIQtv3EFIqRAFw-i8uEbk55Z-_2O7B-a12V6UrMTfEA-OvHsBk2rVdXPSlf3ETPjd_J4hP0B_yi8c-pcSP1_3WXKl-u-x5Rq0TD2aChLB5nQ_vvHRINQR3m2-wb2E8bbS3Q-HcPeczQ%3D%3D&q=Hamza+Mobile+Galaxy+Reviews&sa=X&ved=2ahUKEwiGmcCFmpOVAxWja2wGHWZwCT8Q0bkNegQINxAF&biw=1440&bih=739&dpr=1" target="_blank">
+      ⭐ Rate us on Google
+    </a>
+  </div>
+
+  <!-- BIG BUTTONS -->
+  <div class="big-buttons">
+    <button class="big-btn about-btn" onclick="toggleAbout()">More Info</button>
+    <button class="big-btn share-btn" onclick="sharePage()">🔗 Share</button>
+  </div>
+
+  <!-- ABOUT -->
+  <div id="about">
+    <p>
+      Hamza Mobiles offers a wide range of smartphones, mobile accessories, and expert repair services. We provide quality products, fast service, and affordable prices to meet all your mobile needs in one place.<br><br>
+      - Hamza Mobiles
+    </p>
+  </div>
+
+</div>
+
+<script>
+function toggleAbout(){
+  let a=document.getElementById("about");
+  a.style.display = (a.style.display==="block") ? "none" : "block";
+}
+
+function sharePage(){
+  if(navigator.share){
+    navigator.share({
+      title:"ScanGrow Demo",
+      text:"Check this out",
+      url:window.location.href
+    });
+  }else{
+    alert("Sharing not supported on this device");
+  }
+}
+</script>
+<footer style="text-align:center; padding:10px; font-size:15px; color:#000000;">
+  Powered by - 
+  <a href="https://scangrow.in" target="_blank" style="color:#000000; text-decoration:none; font-weight:500;">
+    ScanGrow.in
+  </a>
+</footer>
+</body>
+</html>
