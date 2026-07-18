@@ -4,13 +4,13 @@
   "description": "Progressive Web Application POS & Inventory Management System for Kid's Trends Collection",
   "icons": [
     {
-      "src": "icon-192.png",
-      "type": "image/png",
+      "src": "icon-192.jpeg",
+      "type": "image/jpeg",
       "sizes": "192x192"
     },
     {
-      "src": "icon-512.png",
-      "type": "image/png",
+      "src": "icon-512.jpeg",
+      "type": "image/jpeg",
       "sizes": "512x512"
     }
   ],
